@@ -1,3 +1,369 @@
 @import "./reset.css";
 @import "./common.css";
 @import "./wiki-layout.css";
+/* 기본 설정 */
+:root {
+    --primary-color: #4a90e2;
+    --text-color: #333;
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+}
+
+body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* 상단 내비게이션 */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 10%;
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* 프로필 히어로 */
+.hero {
+    display: flex;
+    justify-content: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+}
+
+.profile-card {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    padding: 2rem 3rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.profile-image img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.profile-info h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2rem;
+}
+
+.profile-info .tagline {
+    color: #666;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* 메인 콘텐츠 */
+main {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+.content-section {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.content-section h2 {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+
+/* 기본 정보 테이블 */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.info-table th, .info-table td {
+    border-bottom: 1px solid #eee;
+    padding: 1rem;
+    text-align: left;
+}
+
+.info-table th {
+    background-color: #fafafa;
+    width: 20%;
+    font-weight: 600;
+    color: #555;
+}
+
+/* 갤러리 */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+/* TIL 폼 & 리스트 */
+.til-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group input, .form-group textarea {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: inherit;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.form-actions button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    flex: 1;
+}
+
+.form-actions button[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.form-actions button[type="reset"] {
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+.til-item {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.til-item time {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.til-item h3 {
+    margin: 0.5rem 0;
+}
+
+/* 푸터 */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #2c3e50;
+    color: white;
+    margin-top: 4rem;
+}
+/* 자기소개 상세 섹션 스타일 */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.about-item h3, .about-full-item h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 0.5rem;
+}
+
+.about-item ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.about-item ul li {
+    margin-bottom: 0.5rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.about-item ul li a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.about-item ul li a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.contribute-list .desc {
+    display: block;
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 0.2rem;
+}
+
+.about-full-item {
+    margin-top: 3rem;
+    background-color: #fcfcfc;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #f0f0f0;
+}
+
+.experience-list {
+    list-style: none;
+    padding: 0;
+}
+
+.experience-list li {
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    border-left: 3px solid #e2e8f0;
+    color: #444;
+}
+
+.experience-list li strong {
+    display: inline-block;
+    width: 50px;
+    color: var(--primary-color);
+}
+#works {
+    max-width: 1000px; /* 전체 섹션 너비를 약간 키움 */
+    margin: 3rem auto;
+}
+.works-list {
+    display: flex;
+    flex-direction: column; /* 카드를 위아래로 배치하여 가로를 넓게 씁니다 */
+    gap: 3rem; /* 카드 사이 간격을 넉넉하게 줍니다 */
+}
+
+/* iframe 반응형 처리 (기존 코드 유지) */
+.work-thumbnail {
+    width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+.work-thumbnail img {
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+}
+
+.work-thumbnail iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* 카드 자체를 크게 변경 */
+.work-card {
+    display: flex;
+    flex-direction: column; /* 세로 배치 */
+    border: 1px solid #eee;
+    border-radius: 12px; /* 둥근 모서리 강화 */
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* 부드러운 그림자 */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.work-card:hover {
+    transform: translateY(-5px); /* 호버 효과 */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.work-info {
+    padding: 1.5rem; /* 카드 내용 여백 확대 */
+}
+
+.work-info h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    font-size: 1.4rem; /* 제목 크기 확대 */
+    margin-bottom: 0.8rem;
+}
+
+.work-info p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 1rem; /* 본문 크기 확대 */
+    margin: 0;
+}
